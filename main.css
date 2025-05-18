@@ -8,16 +8,27 @@ body{
     text-decoration: none;
     color: white;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 5px 10px;
+    position: relative;
 }
 nav{
-    background-color: rgba(153, 182, 237, 0);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     padding: 6px 0px;
 }
-.nav-content:hover{
-    color: rgb(208, 208, 209);
-    transform: scale(1.1);
+.nav-content::after{
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    top: 25px;
+    left: 0px;
+    transition: ease 0.3s;
+}
+.nav-content:hover::after{
+    width: 100%;
+    background: linear-gradient(rgb(2, 250, 209),rgb(2, 93, 88));
+    filter: blur(1px);
 }
 .name{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -75,12 +86,17 @@ nav{
     color: white;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+.button:hover{
+    color: rgb(2, 2, 78);
+}
 button{
     background: linear-gradient(#216b6b,rgb(36, 94, 95));
     border: none;
     border-radius: 10px;
     padding: 6px 15px;
-    box-shadow: 0px 0px 10px rgba(142, 237, 242, 0.76);
+}
+button:hover{
+    box-shadow: 0px 0px 10px rgba(24, 244, 218, 0.537);
 }
 .buttonalign{
     margin-top: 50px;
@@ -136,8 +152,38 @@ button{
 }
 .img{
     justify-self: center;
-    border-radius: 50px;
+    border-radius: 50%;
     padding-top: 130px;
+    position: relative;
+}
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 20deg;
+    inherits: false;
+}
+.img::after{
+    content: '';
+    height: 260px;
+    width: 260px;
+    background: conic-gradient(from var(--angle), rgb(13, 240, 221),transparent 50%);
+    filter: brightness(90%) blur(5px);
+    position: absolute;
+    left: -5px;
+    top: 125px;
+    border-radius: 50%;
+    z-index: -3;
+    animation: profile 10s linear infinite;
+}
+@keyframes profile {
+    0%{
+        --angle: 80deg;
+    }
+    50%{
+        --angle: -280deg;
+    }
+    100%{
+        --angle: 80deg;
+    }
 }
 .rolestart{
     display: flex;
@@ -271,7 +317,7 @@ padding-bottom: 100px;
 .cont{
     margin-left: -150px;
 }
-@media only screen and (max-width:800px) {
+@media screen and (max-width: 767px) {
     .home{
         display: block;                
     }
