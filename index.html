@@ -47,7 +47,7 @@
             </div>
             <div>
                <div class="img">
-                        <img src="IMG20250107112356_01.jpg" alt="" height="250" width="250" style="border-radius: 50%;">
+                        <img src="IMG20250107112356_01.jpg" alt="" height="250" width="250" style="border-radius: 50%;border: 2px solid rgb(59, 59, 59);">
                </div>
             </div>
         </div >
@@ -92,19 +92,43 @@
                     </div>
                 </div>
             </div>
-            <div class="para"> 
-                <label for="">
-                            Iam currently studying full stack in python, 
-                            I have a basic knowledge in web Hosting, database.
-                            Practicing in various projects to sharp my knowledge.
-                            and also an
-                </label>
-                <label for="" class="design1"><b>UI</b></label>
-                <label for="" class="blink">/</label>
-                <label for="" class="design3" ><b>UX DESIGNER</b></label>
-                <div class="buttonalign cont"  >
-                    <button><a href="#footer" class="button"><b>CONTACT</b></a></button>
-                </div>
+            <div> 
+                    <div class="text-box">
+                        <div class="skill-txt">
+                                <label >SKILLS</label>
+                        </div>
+                        <div class="txt-box-content">
+                            <div class="cursor-st"></div>
+                            <div class="options">
+                                <div class="options-content">
+                                    <div onclick="bold()">
+                                        <label><b>B</b></label>
+                                    </div>
+                                    <div onclick="underline()">
+                                        <label style="text-decoration: underline;">U</label>
+                                    </div>
+                                    <div onclick="strikethrough()">
+                                        <label ><s>S</s></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="text-box-skills">
+                                <p class="t-b-s-para">Currently studying fullstack in python. I have</p>
+                                <p class="t-b-s-para align-para2"> some basic knowledge about webhosting, database.</p>
+                                <p class="t-b-s-para align-para3">Practicing in various  projects to sharp my </p>
+                                <div style="width: fit-content;position: relative;">
+                                    <p class="t-b-s-para align-para4">knowledge(semantic html, css, vanila js).</p>
+                                    <div>
+                                        <p class="cursor-end"></p>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="buttonalign cont">
+                        <button><a href="#footer" class="button"><b>CONTACT</b></a></button>
+                    </div>
             </div>
         </div>
     </div>    
@@ -139,5 +163,17 @@
         </div>
 
     </footer>
+    <script>
+        var skill=document.getElementById('text-box-skills');
+        function bold(){
+            skill.classList.toggle('bold');
+        }
+        function underline(){
+            skill.classList.toggle('underline');
+        }
+        function strikethrough(){
+            skill.classList.toggle('strike-through');
+        }
+    </script>
 </body>
 </html>
